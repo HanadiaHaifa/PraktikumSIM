@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perpustakaan Sekolah</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap");
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f9ff;
+        color: #333;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        background-color: #0066cc;
+        padding: 10px;
+        color: white;
+      }
+
+      .navbar img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin: 0 5px;
+      }
+
+      .navbar a:hover {
+        background-color: #004d99;
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown a {
+        cursor: pointer;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #0066cc;
+        padding: 10px;
+        border-radius: 5px;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: #004d99;
+      }
+
+      .jumbotron {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #cce7ff;
+        color: #004d99;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Roboto Slab", serif;
+      }
+
+      .form-section {
+        padding: 20px;
+        background-color: #e6f2ff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-section h2 {
+        text-align: center;
+        color: #0066cc;
+        font-family: "Roboto Slab", serif;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #004d99;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #b3d9ff;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .form-group input:focus {
+        border-color: #66b3ff;
+        outline: none;
+      }
+
+      button {
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #004d99;
+      }
+
+      #koleksi {
+        padding: 20px;
+        background-color: #e6f9ff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      #koleksi h2 {
+        text-align: center;
+        color: #0066cc;
+        font-family: "Roboto Slab", serif;
+      }
+
+      #koleksi .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      #koleksi .gallery img {
+        width: 150px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      #koleksi .gallery img:hover {
+        transform: scale(1.1);
+      }
+
+      footer {
+        background-color: #004d99;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <img src="logo.jpg" alt="Logo Perpustakaan" />
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <div class="dropdown">
+        <a>Layanan</a>
+        <div class="dropdown-menu">
+          <a href="#pendaftaran">Pendaftaran Anggota</a>
+          <a href="#informasi">Informasi Layanan</a>
+        </div>
+      </div>
+      <a href="#koleksi">Koleksi</a>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron" id="home">
+      <h1>Selamat Datang</h1>
+    </div>
+
+    <!-- Pendaftaran Anggota -->
+    <section class="form-section" id="layanan">
+      <h2>Pendaftaran Anggota</h2>
+      <form name="pendaftaran">
+        <div class="form-group">
+          <label for="name">Nama Lengkap</label>
+          <input type="text" id="name" name="nama" placeholder="Masukkan nama lengkap" required />
+        </div>
+        <div class="form-group">
+          <label for="kelas">Kelas</label>
+          <input type="text" id="kelas" name="kelas" placeholder="Masukkan kelas" required />
+        </div>
+        <div class="form-group">
+          <label for="nis">Nomor Induk Siswa (NIS)</label>
+          <input type="text" id="nis" name="nis" placeholder="Masukkan NIS" required />
+        </div>
+        <div class="form-group">
+          <label for="alamat">Alamat</label>
+          <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat lengkap" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="nomor">Nomor Telepon</label>
+          <input type="tel" id="nomor" name="nomor" placeholder="Masukkan nomor telepon" required />
+        </div>
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+        <center><h3>Informasi Layanan</h3></center>
+        <center><p>Kami menawarkan beragam fasilitas, mulai dari koleksi buku yang dapat dipinjam, area baca yang nyaman, hingga layanan online untuk memenuhi kebutuhan informasi Anda.</p> </center>
+      </div>
+    </section>
+    <!-- Koleksi -->
+    <div id="koleksi">
+      <h2>Koleksi Buku</h2>
+      <div class="gallery">
+        <img src="laut bercerita.png" alt="Buku Fiksi" />
+        <img src="the PM.jpg" alt="Buku Non-Fiksi" />
+        <img src="TG.jpg" alt="Ensiklopedia" />
+        <img src="atomic.jpg" alt="Majalah" />
+        <img src="buku1.jpg" alt="Buku Fiksi" />
+        <img src="catalyst.jpg" alt="Buku Non-Fiksi" />
+        <img src="insecure.jpg" alt="Ensiklopedia" />
+        <img src="malcom.jpg" alt="Majalah" />
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Alamat: Jl. Tadika Mesra No. 286</p>
+      <p>Contact: info@perpustakaanhanapunya.com</p>
+      <p>Sosial Media: @perpustakaanhanapunya</p>
+    </footer>
+
+    <form name="pendaftaran">
+      <input name="nama" type="text" placeholder="Nama" required />
+      <button type="submit">Send</button>
+    </form>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyVYh4XnBltmPcMUUVd00PNkdjt-7VujYdpOFvWiXuKx5tZFrHL1KlC33FpLlEUe3_Dlg/exec";
+      const form = document.forms["pendaftaran"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
